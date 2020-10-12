@@ -23,4 +23,9 @@ export class PetService {
   addPet(pet: Pet): void {
     this.pets.push(pet);
   }
+
+  getPetById(id: number): { id: number; name: string } {
+    return this.pets.find(p => p.id === id);
+
+  }
 }

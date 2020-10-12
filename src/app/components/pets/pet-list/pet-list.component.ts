@@ -18,6 +18,7 @@ export class PetListComponent implements OnInit {
     this.pets = this.petService.getPets();
   }
 
+
   addPet(): void {
     this.petService.addPet({
       id: 12,
