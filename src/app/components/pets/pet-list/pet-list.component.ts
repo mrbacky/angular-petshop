@@ -19,12 +19,7 @@ export class PetListComponent implements OnInit {
   }
 
 
-  addPet(): void {
-    this.petService.addPet({
-      id: 12,
-      name: 'some pet'
-    });
-  }
+
 
 
 }
