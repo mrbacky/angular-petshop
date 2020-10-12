@@ -13,7 +13,7 @@ describe('PetListComponent', () => {
     .compileComponents();
   });
 
-  beforeEach(() => {
+  beforeEach(() => { 
     fixture = TestBed.createComponent(PetListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
