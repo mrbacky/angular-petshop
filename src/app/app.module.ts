@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PetDetailsComponent } from './components/pets/pet-details/pet-details.component';
 import { PetAddComponent } from './components/pets/pet-add/pet-add.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { PetUpdateComponent } from './components/pets/pet-update/pet-update.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     NavbarComponent,
     WelcomeComponent,
     PetDetailsComponent,
-    PetAddComponent
+    PetAddComponent,
+    PetUpdateComponent
   ],
     imports: [
         BrowserModule,

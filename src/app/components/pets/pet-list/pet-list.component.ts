@@ -16,10 +16,13 @@ export class PetListComponent implements OnInit {
 
   ngOnInit(): void {
     this.pets = this.petService.getPets();
+
   }
 
 
+  delete(id: number): void {
+    this.petService.deletePet(id);
+    this.pets = this.petService.getPets();
 
-
-
+  }
 }
