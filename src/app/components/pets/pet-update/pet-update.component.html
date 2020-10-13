@@ -1,0 +1,23 @@
+<p>pet-update works!</p>
+
+
+
+<form [formGroup]="petForm" (ngSubmit)="save()">
+
+  <div>
+    <label for="id">
+      id
+    </label>
+    <input id="id" type="text" formControlName="id">
+  </div>
+
+  <div>
+    <label for="name">
+      Name
+    </label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+  <button class="button" type="submit">save</button>
+
+</form>
