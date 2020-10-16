@@ -15,7 +15,8 @@ export class PetAddComponent implements OnInit {
     name: new FormControl('')
   });
 
-  constructor(private petService: PetService, private router: Router) {
+  constructor(private petService: PetService,
+              private router: Router) {
   }
 
   ngOnInit(): void {

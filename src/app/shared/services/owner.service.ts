@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Owner} from '../models/owner';
+import {Pet} from '../models/pet';
 
 @Injectable({
   providedIn: 'root'
@@ -30,13 +31,11 @@ export class OwnerService {
     ];
   }
 
-
+  addOwner(owner: Owner): void {
+    this.owners.push(owner);
+  }
   getOwners(): Owner[] {
     return this.owners;
-  }
-
-  deletePet(id: number): void {
-    this.owners = this.owners.filter(o => o.id !== id);
   }
 
   getOwnerById(id: number): Owner {
@@ -47,5 +46,9 @@ export class OwnerService {
     const ownerToUpdate = this.getOwnerById(owner.id);
     const index = this.owners.indexOf(ownerToUpdate);
     this.owners[index] = owner;
+  }
+
+  deleteOwner(id: number): void {
+    this.owners = this.owners.filter(o => o.id !== id);
   }
 }

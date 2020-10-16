@@ -20,7 +20,7 @@ export class OwnerListComponent implements OnInit {
   }
 
   delete(id: number): void {
-    this.ownerService.deletePet(id);
+    this.ownerService.deleteOwner(id);
     this.owners = this.ownerService.getOwners();
   }
 }

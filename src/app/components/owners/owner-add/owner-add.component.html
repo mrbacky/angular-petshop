@@ -1,1 +1,47 @@
-<p>owner-add works!</p>
+<form [formGroup]="ownerForm" (ngSubmit)="save()">
+
+  <div>
+    <label for="id">
+      id
+    </label>
+    <input id="id" type="text" formControlName="id">
+  </div>
+
+  <div>
+    <label for="firstName">
+      First Name
+    </label>
+    <input id="firstName" type="text" formControlName="firstName">
+  </div>
+
+  <div>
+    <label for="lastName">
+      Last Name
+    </label>
+    <input id="lastName" type="text" formControlName="lastName">
+  </div>
+
+  <div>
+    <label for="address">
+      Address
+    </label>
+    <input id="address" type="text" formControlName="address">
+  </div>
+
+  <div>
+    <label for="email">
+      Email
+    </label>
+    <input id="email" type="text" formControlName="email">
+  </div>
+
+  <div>
+    <label for="phoneNumber">
+      Phone Number
+    </label>
+    <input id="phoneNumber" type="text" formControlName="phoneNumber">
+  </div>
+
+  <button class="button" type="submit">save</button>
+
+</form>
