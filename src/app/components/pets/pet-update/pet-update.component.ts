@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {PetService} from '../../../shared/services/pet.service';
 import {FormControl, FormGroup} from '@angular/forms';
 
@@ -8,6 +8,7 @@ import {FormControl, FormGroup} from '@angular/forms';
   templateUrl: './pet-update.component.html',
   styleUrls: ['./pet-update.component.css']
 })
+
 export class PetUpdateComponent implements OnInit {
 
   id: number;
@@ -16,7 +17,9 @@ export class PetUpdateComponent implements OnInit {
     name: new FormControl('')
   });
 
-  constructor(private route: ActivatedRoute, private petService: PetService) {
+  constructor(private route: ActivatedRoute,
+              private petService: PetService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -33,9 +36,8 @@ export class PetUpdateComponent implements OnInit {
     const pet = this.petForm.value;
     pet.id = this.id;
     this.petService.updatePet(pet);
-
-    /*this.petForm.reset();
-    this.router.navigateByUrl('pets');*/
+    this.petForm.reset();
+    this.router.navigateByUrl('pets');
   }
 
 }
