@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Pet} from '../models/pet';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,9 +9,10 @@ import {Pet} from '../models/pet';
 
 export class PetService {
 
-  pets: ({ id: number, name: string }[]);
 
-  constructor() {
+  pets: Pet[];
+
+  constructor() { // private http: HttpClient
     this.pets = [
       {id: 1, name: 'Molly'},
       {id: 2, name: 'Mikey'}
@@ -18,6 +21,7 @@ export class PetService {
 
   getPets(): Pet[] {
     return this.pets;
+    // return this.http.get<Pet[]>('https://petshop-rest-api-rado.azurewebsites.net/api/pets');
   }
 
   addPet(pet: Pet): void {
@@ -30,7 +34,7 @@ export class PetService {
     this.pets[index] = pet;
   }
 
-  getPetById(id: number): { id: number; name: string } {
+  getPetById(id: number): Pet {
     return this.pets.find(p => p.id === id);
 
   }
