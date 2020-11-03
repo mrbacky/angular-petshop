@@ -15,6 +15,8 @@ import {OwnerListComponent} from './components/owners/owner-list/owner-list.comp
 import {OwnerAddComponent} from './components/owners/owner-add/owner-add.component';
 import {OwnerUpdateComponent} from './components/owners/owner-update/owner-update.component';
 import {OwnerDetailsComponent} from './components/owners/owner-details/owner-details.component';
+import {LoginComponent} from './components/login/login.component';
+import {JwtHelperService} from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -28,17 +30,20 @@ import {OwnerDetailsComponent} from './components/owners/owner-details/owner-det
     OwnerListComponent,
     OwnerAddComponent,
     OwnerUpdateComponent,
-    OwnerDetailsComponent
+    OwnerDetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 
 export class AppModule {
+
+
 }

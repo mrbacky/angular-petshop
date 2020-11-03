@@ -10,8 +10,13 @@ import {OwnerListComponent} from './components/owners/owner-list/owner-list.comp
 import {OwnerDetailsComponent} from './components/owners/owner-details/owner-details.component';
 import {OwnerAddComponent} from './components/owners/owner-add/owner-add.component';
 import {OwnerUpdateComponent} from './components/owners/owner-update/owner-update.component';
+import {AuthGuard} from './shared/auth.guard';
+import {LoginComponent} from './components/login/login.component';
 
 const appRoutes: Routes = [
+
+  {path: 'login', component: LoginComponent},
+
   {path: '', component: WelcomeComponent},
 
   {path: 'pets', component: PetListComponent},
@@ -19,10 +24,12 @@ const appRoutes: Routes = [
   {path: 'pet-add', component: PetAddComponent},
   {path: 'pet-update/:id', component: PetUpdateComponent},
 
-  {path: 'owners', component: OwnerListComponent},
+  {path: 'owners', component: OwnerListComponent, canActivate: [AuthGuard]},
   {path: 'owners/:id', component: OwnerDetailsComponent},
   {path: 'owner-add', component: OwnerAddComponent},
   {path: 'owner-update/:id', component: OwnerUpdateComponent},
+
+  {path: '**', redirectTo: ''}
 
 
 ];

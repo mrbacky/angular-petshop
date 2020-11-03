@@ -1,7 +1,7 @@
 <button routerLink="/owner-add">add owner</button>
 
 <ul>
-  <li *ngFor="let owner of owners">
+  <li *ngFor="let owner of (filteredList$ | async)?.list">
     <a routerLink="/owners/{{owner.id}}">  {{owner.id}}: {{owner.firstName}} {{owner.lastName}} </a>
     <button routerLink="/owner-update/{{owner.id}}">update</button>
     <button (click)="delete(owner.id)">Delete</button>
