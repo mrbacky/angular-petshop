@@ -16,7 +16,8 @@ import {OwnerAddComponent} from './components/owners/owner-add/owner-add.compone
 import {OwnerUpdateComponent} from './components/owners/owner-update/owner-update.component';
 import {OwnerDetailsComponent} from './components/owners/owner-details/owner-details.component';
 import {LoginComponent} from './components/login/login.component';
-import {JwtHelperService} from '@auth0/angular-jwt';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MaterialModule} from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,8 @@ import {JwtHelperService} from '@auth0/angular-jwt';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

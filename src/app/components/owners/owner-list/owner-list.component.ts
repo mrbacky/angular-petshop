@@ -14,7 +14,6 @@ import {Router} from '@angular/router';
 
 export class OwnerListComponent implements OnInit {
 
-  owners: Owner[];
   filteredList$: Observable<FilteredList<Owner>>;
 
   constructor(private ownerService: OwnerService,
